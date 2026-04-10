@@ -1,15 +1,16 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import drwuLogo from '@/assets/drwu-logo.png';
 
 const Header = () => {
   const { lang, setLang, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
-    { key: 'nav.locations', href: '#locations' },
-    { key: 'nav.whyUs', href: '#why-us' },
     { key: 'nav.about', href: '#about' },
+    { key: 'nav.services', href: '#services' },
+    { key: 'nav.clinics', href: '#clinics' },
     { key: 'nav.gallery', href: '#gallery' },
     { key: 'nav.contact', href: '#contact' },
   ];
@@ -18,11 +19,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-3">
-          <img
-            src="https://www.drpatrickwu.com/wp-content/uploads/2023/05/logo.svg"
-            alt="Dr. Patrick Wu"
-            className="h-8 md:h-10"
-          />
+          <img src={drwuLogo} alt="Dr. Patrick Wu" className="h-8 md:h-10" />
+          <span className="text-sm md:text-base font-semibold text-foreground tracking-tight">Dr. Patrick Wu</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

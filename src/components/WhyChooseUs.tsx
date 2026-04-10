@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {highlights.map(({ icon: Icon, key }) => (
             <div key={key} className="text-center space-y-3 p-6">
-              <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto">
                 <Icon size={24} className="text-accent" />
               </div>
               <p className="text-sm font-medium text-foreground leading-snug">{t(key)}</p>
