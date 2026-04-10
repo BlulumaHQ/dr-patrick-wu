@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GraduationCap } from 'lucide-react';
-import drWuPhoto from '@/assets/friendly/dentist-wu.jpg';
+import drWuPhoto from '@/assets/lm/dr-wu.png';
 
 const AboutDrWu = () => {
   const { t } = useLanguage();
@@ -20,15 +20,15 @@ const AboutDrWu = () => {
         </div>
 
         <div className="grid md:grid-cols-5 gap-12 items-start">
-          <div className="md:col-span-2 flex justify-center">
+          <div className="md:col-span-2 flex justify-center px-6 md:px-4">
             <img
               src={drWuPhoto}
               alt="Dr. Patrick Wu"
-              className="rounded-lg shadow-lg w-full max-w-sm object-cover aspect-[3/4]"
+              className="rounded-lg shadow-lg w-full max-w-[280px] md:max-w-[300px] object-cover aspect-[3/4]"
             />
           </div>
 
-          <div className="md:col-span-3 space-y-6">
+          <div className="md:col-span-3 space-y-6 px-2 md:px-0">
             <div>
               <h3 className="text-2xl font-semibold text-foreground">Dr. Patrick Wu</h3>
               <p className="text-accent font-medium mt-1">{t('about.degree')}</p>

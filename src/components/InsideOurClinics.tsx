@@ -1,4 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useState } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 import fg1 from '@/assets/friendly/gallery-1.png';
 import fg2 from '@/assets/friendly/gallery-2.png';
@@ -12,6 +14,7 @@ import lg4 from '@/assets/lm/gallery-4.webp';
 
 const InsideOurClinics = () => {
   const { t } = useLanguage();
+  const [lightbox, setLightbox] = useState<{ images: { src: string; alt: string }[]; index: number } | null>(null);
 
   const friendlyImages = [
     { src: fg1, alt: 'Friendly Dental Centre interior 1' },
@@ -27,49 +30,109 @@ const InsideOurClinics = () => {
     { src: lg4, alt: 'Little Mountain Dental Centre pediatric area' },
   ];
 
+  const openLightbox = (images: { src: string; alt: string }[], index: number) => {
+    setLightbox({ images, index });
+  };
+
+  const navigate = (dir: -1 | 1) => {
+    if (!lightbox) return;
+    const newIndex = (lightbox.index + dir + lightbox.images.length) % lightbox.images.length;
+    setLightbox({ ...lightbox, index: newIndex });
+  };
+
   return (
-    <section id="gallery" className="section-padding bg-secondary">
-      <div className="section-container">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="heading-section">{t('gallery.title')}</h2>
-          <div className="divider-accent" />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-foreground text-center mb-6">Friendly Dental Centre</h3>
-            <div className="grid grid-cols-2 gap-3">
-              {friendlyImages.map((img, i) => (
-                <div key={i} className="rounded-lg overflow-hidden border border-border">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+    <>
+      <section id="gallery" className="section-padding bg-secondary">
+        <div className="section-container">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="heading-section">{t('gallery.title')}</h2>
+            <div className="divider-accent" />
           </div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-foreground text-center mb-6">Little Mountain Dental Centre</h3>
-            <div className="grid grid-cols-2 gap-3">
-              {lmImages.map((img, i) => (
-                <div key={i} className="rounded-lg overflow-hidden border border-border">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-foreground text-center mb-6">Friendly Dental Centre</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {friendlyImages.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => openLightbox(friendlyImages, i)}
+                    className="rounded-lg overflow-hidden border border-border cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-foreground text-center mb-6">Little Mountain Dental Centre</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {lmImages.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => openLightbox(lmImages, i)}
+                    className="rounded-lg overflow-hidden border border-border cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+            onClick={() => setLightbox(null)}
+          >
+            <X size={32} />
+          </button>
+
+          <button
+            className="absolute left-4 md:left-8 text-white/60 hover:text-white transition-colors"
+            onClick={(e) => { e.stopPropagation(); navigate(-1); }}
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          <img
+            src={lightbox.images[lightbox.index].src}
+            alt={lightbox.images[lightbox.index].alt}
+            className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button
+            className="absolute right-4 md:right-8 text-white/60 hover:text-white transition-colors"
+            onClick={(e) => { e.stopPropagation(); navigate(1); }}
+          >
+            <ChevronRight size={40} />
+          </button>
+
+          <div className="absolute bottom-6 text-white/50 text-sm">
+            {lightbox.index + 1} / {lightbox.images.length}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

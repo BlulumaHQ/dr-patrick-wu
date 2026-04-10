@@ -1,9 +1,9 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import friendlyLogo from '@/assets/friendly/logo.svg';
-import friendlyHero from '@/assets/friendly/about-clinic.jpg';
+import friendlyHero from '@/assets/friendly/home-screenshot.jpg';
 import lmLogo from '@/assets/lm/logo.svg';
-import lmHero from '@/assets/lm/office-welcome.jpg';
+import lmHero from '@/assets/lm/home-screenshot.jpg';
 
 const OurClinics = () => {
   const { t } = useLanguage();
@@ -24,7 +24,8 @@ const OurClinics = () => {
       },
       ctaKey: 'clinics.visitFriendly',
       ctaHref: 'https://friendly-dental-centre-preview.lovable.app/',
-      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.123!2d-123.1375!3d49.1895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDExJzIyLjIiTiAxMjPCsDA4JzE1LjAiVw!5e0!3m2!1sen!2sca!4v1!5m2!1sen!2sca&q=120-5508+Hollybridge+Way+Richmond+BC',
+      ctaColor: 'bg-[hsl(207,45%,42%)] hover:bg-[hsl(207,45%,36%)]',
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.8!2d-123.1189!3d49.1748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486106cbe20ebb5%3A0x7f30eb4d94df5a5e!2s120-5508%20Hollybridge%20Way%2C%20Richmond%2C%20BC%20V7C%204N3!5e0!3m2!1sen!2sca!4v1',
     },
     {
       name: 'Little Mountain Dental Centre',
@@ -41,6 +42,7 @@ const OurClinics = () => {
       },
       ctaKey: 'clinics.visitLM',
       ctaHref: 'https://littlemountain-03-bluluma-preview.lovable.app/',
+      ctaColor: 'bg-[hsl(145,35%,38%)] hover:bg-[hsl(145,35%,32%)]',
       mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.123!2d-123.0885!3d49.2633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f62dcb8675%3A0xedd3f62fe73ec0ea!2sLittle+Mountain+Dental+Centre!5e0!3m2!1sen!2sca!4v1!5m2!1sen!2sca',
     },
   ];
@@ -60,7 +62,7 @@ const OurClinics = () => {
                 <img
                   src={clinic.image}
                   alt={clinic.name}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-56 object-cover object-top"
                 />
               </div>
 
@@ -124,7 +126,7 @@ const OurClinics = () => {
                   href={clinic.ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-clinic w-full text-center"
+                  className={`inline-flex items-center justify-center px-8 py-3 text-white font-medium tracking-wide rounded transition-all duration-300 w-full text-center ${clinic.ctaColor}`}
                 >
                   {t(clinic.ctaKey)}
                 </a>
