@@ -26,7 +26,7 @@ const InsideOurClinics = () => {
     { src: fg3, alt: 'Friendly Dental Centre reading area' },
     { src: fg4, alt: 'Friendly Dental Centre treatment room' },
     { src: fg5, alt: 'Friendly Dental Centre patient care' },
-    { src: fg6, alt: 'Friendly Dental Centre interior' },
+    { src: fg6, alt: 'Friendly Dental Centre reception' },
   ];
 
   const lmImages = [
@@ -35,7 +35,7 @@ const InsideOurClinics = () => {
     { src: lg3, alt: 'Little Mountain Dental Centre shelves' },
     { src: lg4, alt: 'Little Mountain Dental Centre treatment room' },
     { src: lg5, alt: 'Little Mountain Dental Centre Dr. Wu with patient' },
-    { src: lg6, alt: 'Little Mountain Dental Centre waiting area' },
+    { src: lg6, alt: 'Little Mountain Dental Centre lounge' },
   ];
 
   const openLightbox = (images: { src: string; alt: string }[], index: number) => {
