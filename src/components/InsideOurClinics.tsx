@@ -7,14 +7,14 @@ import fg2 from '@/assets/friendly/gallery-library.webp';
 import fg3 from '@/assets/friendly/gallery-reading.webp';
 import fg4 from '@/assets/friendly/gallery-treatment.webp';
 import fg5 from '@/assets/friendly/gallery-patient.webp';
-import fg6 from '@/assets/friendly/gallery-1.png';
+import fg6 from '@/assets/friendly/gallery-reception.webp';
 
 import lg1 from '@/assets/lm/gallery-exterior.webp';
 import lg2 from '@/assets/lm/gallery-library.webp';
 import lg3 from '@/assets/lm/gallery-shelves.webp';
 import lg4 from '@/assets/lm/gallery-treatment.webp';
 import lg5 from '@/assets/lm/gallery-drwu.webp';
-import lg6 from '@/assets/lm/gallery-1.webp';
+import lg6 from '@/assets/lm/gallery-lounge.webp';
 
 const InsideOurClinics = () => {
   const { t } = useLanguage();
