@@ -1,5 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { MapPin, Phone } from 'lucide-react';
+import friendlyLogo from '@/assets/friendly/footer-logo.svg';
+import lmLogo from '@/assets/lm/logo-white.svg';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -9,11 +11,7 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div className="space-y-4">
-            <img
-              src="https://www.drpatrickwu.com/wp-content/uploads/2023/05/friendly-dental.svg"
-              alt="Friendly Dental Centre"
-              className="h-8 brightness-0 invert"
-            />
+            <img src={friendlyLogo} alt="Friendly Dental Centre" className="h-8 brightness-0 invert" />
             <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
               <MapPin size={16} className="mt-0.5 shrink-0" />
               <span>120 - 5508 Hollybridge Way, Richmond, BC</span>
@@ -27,11 +25,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <img
-              src="https://www.drpatrickwu.com/wp-content/uploads/2023/05/little-1.svg"
-              alt="Little Mountain Dental Centre"
-              className="h-8 brightness-0 invert"
-            />
+            <img src={lmLogo} alt="Little Mountain Dental Centre" className="h-8 brightness-0 invert" />
             <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
               <MapPin size={16} className="mt-0.5 shrink-0" />
               <span>620 E. Broadway, Vancouver, BC V5T 2A6</span>

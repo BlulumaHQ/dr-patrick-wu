@@ -1,14 +1,12 @@
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import LocationChooser from '@/components/LocationChooser';
-import WhyChooseUs from '@/components/WhyChooseUs';
 import AboutDrWu from '@/components/AboutDrWu';
-import ClinicDetails from '@/components/ClinicDetails';
-import MapsSection from '@/components/MapsSection';
-import GallerySection from '@/components/GallerySection';
+import AreasOfFocus from '@/components/AreasOfFocus';
+import OurClinics from '@/components/OurClinics';
+import InsideOurClinics from '@/components/InsideOurClinics';
+import WhyChooseUs from '@/components/WhyChooseUs';
 import BrandStatement from '@/components/BrandStatement';
-import SupportText from '@/components/SupportText';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -17,14 +15,12 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <LocationChooser />
-        <WhyChooseUs />
         <AboutDrWu />
-        <ClinicDetails />
-        <MapsSection />
-        <GallerySection />
+        <AreasOfFocus />
+        <OurClinics />
+        <InsideOurClinics />
+        <WhyChooseUs />
         <BrandStatement />
-        <SupportText />
       </main>
       <Footer />
     </LanguageProvider>

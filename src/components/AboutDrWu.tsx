@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { GraduationCap } from 'lucide-react';
+import drWuPhoto from '@/assets/friendly/dentist-wu.jpg';
 
 const AboutDrWu = () => {
   const { t } = useLanguage();
@@ -11,7 +12,7 @@ const AboutDrWu = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-secondary">
+    <section id="about" className="section-padding bg-background">
       <div className="section-container">
         <div className="text-center mb-16 space-y-4">
           <h2 className="heading-section">{t('about.title')}</h2>
@@ -21,9 +22,9 @@ const AboutDrWu = () => {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <div className="md:col-span-2 flex justify-center">
             <img
-              src="https://www.drpatrickwu.com/wp-content/uploads/2023/04/choose-right-img-1024x679.png"
+              src={drWuPhoto}
               alt="Dr. Patrick Wu"
-              className="rounded-lg shadow-lg w-full max-w-sm"
+              className="rounded-lg shadow-lg w-full max-w-sm object-cover aspect-[3/4]"
             />
           </div>
 
@@ -44,6 +45,10 @@ const AboutDrWu = () => {
 
             <p className="text-muted-foreground leading-relaxed">
               {t('about.bio')}
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              {t('about.focus')}
             </p>
 
             <p className="text-foreground font-medium leading-relaxed border-l-2 border-accent pl-4">
