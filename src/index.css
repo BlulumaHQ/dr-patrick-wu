@@ -107,7 +107,7 @@
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-6 md:px-8;
+    @apply max-w-6xl mx-auto px-8 md:px-8;
   }
 
   .clinic-card {

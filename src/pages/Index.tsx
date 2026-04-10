@@ -2,8 +2,8 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutDrWu from '@/components/AboutDrWu';
-import AreasOfFocus from '@/components/AreasOfFocus';
 import OurClinics from '@/components/OurClinics';
+import AreasOfFocus from '@/components/AreasOfFocus';
 import InsideOurClinics from '@/components/InsideOurClinics';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import BrandStatement from '@/components/BrandStatement';
@@ -16,8 +16,8 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutDrWu />
-        <AreasOfFocus />
         <OurClinics />
+        <AreasOfFocus />
         <InsideOurClinics />
         <WhyChooseUs />
         <BrandStatement />
