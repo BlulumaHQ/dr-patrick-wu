@@ -2,32 +2,40 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import fg1 from '@/assets/friendly/gallery-1.png';
-import fg2 from '@/assets/friendly/gallery-2.png';
-import fg3 from '@/assets/friendly/gallery-3.png';
-import fg4 from '@/assets/friendly/gallery-4.jpg';
+import fg1 from '@/assets/friendly/gallery-exterior.webp';
+import fg2 from '@/assets/friendly/gallery-library.webp';
+import fg3 from '@/assets/friendly/gallery-reading.webp';
+import fg4 from '@/assets/friendly/gallery-treatment.webp';
+import fg5 from '@/assets/friendly/gallery-patient.webp';
+import fg6 from '@/assets/friendly/gallery-1.png';
 
-import lg1 from '@/assets/lm/gallery-1.webp';
-import lg2 from '@/assets/lm/gallery-2.webp';
-import lg3 from '@/assets/lm/gallery-3.webp';
-import lg4 from '@/assets/lm/gallery-4.webp';
+import lg1 from '@/assets/lm/gallery-exterior.webp';
+import lg2 from '@/assets/lm/gallery-library.webp';
+import lg3 from '@/assets/lm/gallery-shelves.webp';
+import lg4 from '@/assets/lm/gallery-treatment.webp';
+import lg5 from '@/assets/lm/gallery-drwu.webp';
+import lg6 from '@/assets/lm/gallery-1.webp';
 
 const InsideOurClinics = () => {
   const { t } = useLanguage();
   const [lightbox, setLightbox] = useState<{ images: { src: string; alt: string }[]; index: number } | null>(null);
 
   const friendlyImages = [
-    { src: fg1, alt: 'Friendly Dental Centre interior 1' },
-    { src: fg2, alt: 'Friendly Dental Centre interior 2' },
-    { src: fg3, alt: 'Friendly Dental Centre interior 3' },
-    { src: fg4, alt: 'Friendly Dental Centre waiting area' },
+    { src: fg1, alt: 'Friendly Dental Centre exterior' },
+    { src: fg2, alt: 'Friendly Dental Centre library' },
+    { src: fg3, alt: 'Friendly Dental Centre reading area' },
+    { src: fg4, alt: 'Friendly Dental Centre treatment room' },
+    { src: fg5, alt: 'Friendly Dental Centre patient care' },
+    { src: fg6, alt: 'Friendly Dental Centre interior' },
   ];
 
   const lmImages = [
-    { src: lg1, alt: 'Little Mountain Dental Centre waiting area' },
-    { src: lg2, alt: 'Little Mountain Dental Centre treatment room' },
-    { src: lg3, alt: 'Little Mountain Dental Centre library' },
-    { src: lg4, alt: 'Little Mountain Dental Centre pediatric area' },
+    { src: lg1, alt: 'Little Mountain Dental Centre exterior' },
+    { src: lg2, alt: 'Little Mountain Dental Centre library' },
+    { src: lg3, alt: 'Little Mountain Dental Centre shelves' },
+    { src: lg4, alt: 'Little Mountain Dental Centre treatment room' },
+    { src: lg5, alt: 'Little Mountain Dental Centre Dr. Wu with patient' },
+    { src: lg6, alt: 'Little Mountain Dental Centre waiting area' },
   ];
 
   const openLightbox = (images: { src: string; alt: string }[], index: number) => {
@@ -52,7 +60,7 @@ const InsideOurClinics = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground text-center mb-6">Friendly Dental Centre</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {friendlyImages.map((img, i) => (
                   <button
                     key={i}
@@ -62,7 +70,7 @@ const InsideOurClinics = () => {
                     <img
                       src={img.src}
                       alt={img.alt}
-                      className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-28 md:h-36 object-cover hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </button>
@@ -72,7 +80,7 @@ const InsideOurClinics = () => {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground text-center mb-6">Little Mountain Dental Centre</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {lmImages.map((img, i) => (
                   <button
                     key={i}
@@ -82,7 +90,7 @@ const InsideOurClinics = () => {
                     <img
                       src={img.src}
                       alt={img.alt}
-                      className="w-full h-36 md:h-44 object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-28 md:h-36 object-cover hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </button>
@@ -93,7 +101,6 @@ const InsideOurClinics = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
       {lightbox && (
         <div
           className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
