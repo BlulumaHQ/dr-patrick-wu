@@ -7,14 +7,14 @@ import fg2 from '@/assets/friendly/gallery-library.webp';
 import fg3 from '@/assets/friendly/gallery-reading.webp';
 import fg4 from '@/assets/friendly/gallery-treatment.webp';
 import fg5 from '@/assets/friendly/gallery-patient.webp';
-import fg6 from '@/assets/friendly/gallery-1.png';
+import fg6 from '@/assets/friendly/gallery-reception.webp';
 
 import lg1 from '@/assets/lm/gallery-exterior.webp';
 import lg2 from '@/assets/lm/gallery-library.webp';
 import lg3 from '@/assets/lm/gallery-shelves.webp';
 import lg4 from '@/assets/lm/gallery-treatment.webp';
 import lg5 from '@/assets/lm/gallery-drwu.webp';
-import lg6 from '@/assets/lm/gallery-1.webp';
+import lg6 from '@/assets/lm/gallery-lounge.webp';
 
 const InsideOurClinics = () => {
   const { t } = useLanguage();
@@ -26,7 +26,7 @@ const InsideOurClinics = () => {
     { src: fg3, alt: 'Friendly Dental Centre reading area' },
     { src: fg4, alt: 'Friendly Dental Centre treatment room' },
     { src: fg5, alt: 'Friendly Dental Centre patient care' },
-    { src: fg6, alt: 'Friendly Dental Centre interior' },
+    { src: fg6, alt: 'Friendly Dental Centre reception' },
   ];
 
   const lmImages = [
@@ -35,7 +35,7 @@ const InsideOurClinics = () => {
     { src: lg3, alt: 'Little Mountain Dental Centre shelves' },
     { src: lg4, alt: 'Little Mountain Dental Centre treatment room' },
     { src: lg5, alt: 'Little Mountain Dental Centre Dr. Wu with patient' },
-    { src: lg6, alt: 'Little Mountain Dental Centre waiting area' },
+    { src: lg6, alt: 'Little Mountain Dental Centre lounge' },
   ];
 
   const openLightbox = (images: { src: string; alt: string }[], index: number) => {
