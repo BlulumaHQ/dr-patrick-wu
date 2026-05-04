@@ -42,19 +42,17 @@ const translations: Record<string, Record<Language, string>> = {
   },
 
   // Areas of Focus
-  'services.title': { en: 'Areas of Focus', zh: '服務項目' },
-  'services.implants': { en: 'Implant Dentistry', zh: '植牙' },
-  'services.implants.desc': { en: 'Restoring function and aesthetics with long-lasting implant solutions.', zh: '以持久的植牙方案恢復功能與美觀。' },
-  'services.orthodontics': { en: 'Orthodontics', zh: '矯正治療' },
-  'services.orthodontics.desc': { en: 'Straightening teeth for improved function and confident smiles.', zh: '矯正牙齒以改善功能，展現自信笑容。' },
-  'services.pediatric': { en: 'Pediatric Dentistry', zh: '兒童牙科' },
-  'services.pediatric.desc': { en: 'Gentle, patient-focused care for children of all ages.', zh: '溫和、以患者為中心的兒童牙科照護。' },
-  'services.restorative': { en: 'Restorative Dentistry', zh: '修復治療' },
-  'services.restorative.desc': { en: 'Repairing and rebuilding damaged teeth for long-term health.', zh: '修復受損牙齒，維護長期口腔健康。' },
-  'services.preventive': { en: 'Preventive & Maintenance Care', zh: '預防與維護照護' },
-  'services.preventive.desc': { en: 'Routine exams and cleanings to maintain optimal oral health.', zh: '定期檢查和清潔，維持最佳口腔健康。' },
-  'services.cosmetic': { en: 'Cosmetic Dentistry', zh: '美容牙科' },
-  'services.cosmetic.desc': { en: 'Enhancing smile appearance through modern aesthetic treatments.', zh: '透過現代美學治療提升笑容外觀。' },
+  'services.title': { en: 'Area of Focus', zh: '專業領域' },
+  'services.implants': { en: 'Implant Dentistry', zh: '植牙專科' },
+  'services.implants.desc': {
+    en: 'Dental implants are a long-term solution for replacing missing teeth, designed to restore both function and aesthetics. Dr. Patrick Wu has extensive experience in implant planning and restoration, including complex cases such as full-arch rehabilitation and multi-stage treatments. His approach focuses on precision, stability, and long-term success, ensuring that each implant is carefully integrated to provide natural appearance and durable performance.',
+    zh: '人工植牙是長期取代缺失牙齒的解決方案，旨在同時恢復功能與美觀。吳醫師在植牙規劃與重建方面擁有豐富經驗，包括全口重建及多階段治療等複雜案例。他著重精準、穩定與長期成效，使每一顆植牙都能自然融合，呈現自然外觀並提供持久的使用表現。',
+  },
+  'services.orthodontics': { en: 'Orthodontics', zh: '齒顎矯正' },
+  'services.orthodontics.desc': {
+    en: 'Orthodontic treatment is not only about straightening teeth, but also about achieving proper bite alignment and long-term oral health. Dr. Patrick Wu provides orthodontic care with a focus on functional balance, facial harmony, and stability. From early intervention to adult treatment, each case is carefully planned to ensure predictable results and lasting improvements in both appearance and function.',
+    zh: '矯正治療不僅是排齊牙齒，更關乎咬合的正確排列與長期口腔健康。吳醫師的矯正治療著重於功能平衡、臉型協調與穩定性。從早期介入到成人矯正，每個案例皆經過縝密規劃，確保可預期的成果，並在外觀與功能上帶來持久的改善。',
+  },
 
   // Our Clinics
   'clinics.title': { en: 'Our Clinics', zh: '我們的診所' },
