@@ -1,21 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import implantIcon from '@/assets/icons/implant.svg';
 import orthodonticIcon from '@/assets/icons/orthodontic.svg';
-import pediatricIcon from '@/assets/icons/pediatric.svg';
-import restorativeIcon from '@/assets/icons/restorative.svg';
-import maintenanceIcon from '@/assets/icons/maintenance.svg';
-import estheticIcon from '@/assets/icons/esthetic.svg';
 
 const AreasOfFocus = () => {
   const { t } = useLanguage();
 
-  const services = [
+  const specialties = [
     { titleKey: 'services.implants', descKey: 'services.implants.desc', icon: implantIcon },
     { titleKey: 'services.orthodontics', descKey: 'services.orthodontics.desc', icon: orthodonticIcon },
-    { titleKey: 'services.pediatric', descKey: 'services.pediatric.desc', icon: pediatricIcon },
-    { titleKey: 'services.restorative', descKey: 'services.restorative.desc', icon: restorativeIcon },
-    { titleKey: 'services.preventive', descKey: 'services.preventive.desc', icon: maintenanceIcon },
-    { titleKey: 'services.cosmetic', descKey: 'services.cosmetic.desc', icon: estheticIcon },
   ];
 
   return (
@@ -26,15 +18,23 @@ const AreasOfFocus = () => {
           <div className="divider-accent" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ titleKey, descKey, icon }) => (
-            <div key={titleKey} className="clinic-card text-center space-y-4">
-              <div className="w-16 h-16 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          {specialties.map(({ titleKey, descKey, icon }) => (
+            <article
+              key={titleKey}
+              className="bg-background rounded-lg p-8 md:p-10 lg:p-12 shadow-sm border border-border/50 flex flex-col"
+            >
+              <div className="w-14 h-14 mb-6">
                 <img src={icon} alt="" className="w-full h-full" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">{t(titleKey)}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t(descKey)}</p>
-            </div>
+              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                {t(titleKey)}
+              </h3>
+              <div className="w-12 h-px bg-primary mb-6" />
+              <p className="text-base md:text-[17px] text-muted-foreground leading-[1.7]">
+                {t(descKey)}
+              </p>
+            </article>
           ))}
         </div>
       </div>
