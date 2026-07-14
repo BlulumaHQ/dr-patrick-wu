@@ -1,4 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { implantTranslations } from '@/i18n/implantTranslations';
+
+
 
 type Language = 'en' | 'zh';
 
