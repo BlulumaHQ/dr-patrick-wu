@@ -91,7 +91,9 @@ const translations: Record<string, Record<Language, string>> = {
   // Footer
   'footer.rights': { en: '© 2026 Dr. Patrick Wu. All rights reserved.', zh: '© 2026 吳柏翰醫師。版權所有。' },
   'footer.design': { en: 'Web Design by', zh: '網站設計：' },
+  ...implantTranslations,
 };
+
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
