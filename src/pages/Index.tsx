@@ -1,4 +1,3 @@
-import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutDrWu from '@/components/AboutDrWu';
@@ -11,7 +10,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <LanguageProvider>
+    <>
       <Header />
       <main>
         <HeroSection />
@@ -23,7 +22,7 @@ const Index = () => {
         <BrandStatement />
       </main>
       <Footer />
-    </LanguageProvider>
+    </>
   );
 };
 
