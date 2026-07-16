@@ -13,58 +13,92 @@ export const implantTranslations: Record<string, { en: string; zh: string }> = {
   // Homepage link
   'di.home.readMore': { en: 'Read more', zh: '了解更多' },
   'di.home.readMoreAria': {
-    en: 'Learn more about dental implant treatment with Dr. Patrick Wu',
+    en: 'Learn more about dental implant care with Dr. Patrick Wu',
     zh: '了解吳沛恆醫師的人工植牙治療',
   },
 
   // Hero
   'di.hero.eyebrow': { en: 'Dental Implant Treatment', zh: '人工植牙與缺牙重建' },
   'di.hero.h1': {
-    en: 'Dental Implant Treatment with Dr. Patrick Wu',
+    en: 'Dental Implant Care with Dr. Patrick Wu',
     zh: '吳沛恆醫師人工植牙與缺牙重建',
   },
   'di.hero.support': {
-    en: 'Dr. Patrick Wu provides personalized dental implant assessment and missing-tooth reconstruction at Little Mountain Dental Centre in Vancouver and Friendly Dental Centre in Richmond. Treatment planning is based on each patient\u2019s oral health, bone condition, bite, medical history and individual treatment needs.',
-    zh: '吳沛恆醫師分別於溫哥華 Little Mountain Dental Centre 及列治文 Friendly Dental Centre 提供個人化人工植牙評估與缺牙重建。每項治療計畫均會根據患者的口腔健康、骨質條件、咬合、身體狀況及個人治療需要制定。',
+    en: 'Dr. Patrick Wu provides dental implant consultations and missing-tooth reconstruction at Little Mountain Dental Centre in Vancouver and Friendly Dental Centre in Richmond. Treatment planning is based on each patient\u2019s oral health, bone condition, bite, medical history and individual treatment goals.',
+    zh: '吳沛恆醫師分別於溫哥華 Little Mountain Dental Centre 及列治文 Friendly Dental Centre 提供人工植牙諮詢與缺牙重建。治療計畫會根據每位患者的口腔健康、骨質條件、咬合、身體狀況及個人治療目標制定。',
   },
   'di.hero.ctaPrimary': { en: 'Choose a Clinic for Consultation', zh: '選擇診所預約植牙諮詢' },
-  'di.hero.ctaSecondary': { en: 'Explore Implant Treatment', zh: '了解植牙治療' },
+  'di.hero.ctaSecondary': { en: 'Learn About Implant Care', zh: '了解植牙治療' },
   'di.hero.note': {
-    en: 'A clinical examination and appropriate imaging are required before a treatment plan, timeline or accurate fee estimate can be provided.',
+    en: 'A clinical examination and appropriate imaging are required before a treatment plan, treatment timeline or accurate fee estimate can be provided.',
     zh: '植牙治療方案、所需時間及準確費用，需要經過臨床檢查與適當影像評估後才能確定。',
   },
 
   // Experience highlights
-  'di.exp.1': { en: '15+ Years of Implant Experience', zh: '超過15年植牙經驗' },
-  'di.exp.2': { en: 'More Than 2,200 Implants Placed', zh: '累積完成2,200顆以上人工植體治療' },
+  'di.exp.1': { en: 'More Than 15 Years of Implant Experience', zh: '超過15年植牙臨床經驗' },
+  'di.exp.2': { en: 'More Than 2,200 Dental Implants Placed', zh: '完成2,200顆以上人工植體治療' },
   'di.exp.3': { en: 'AAID Associate Fellow', zh: 'AAID Associate Fellow 資格' },
-  'di.exp.4': { en: 'Digital Implant Planning', zh: '數位化植牙規劃' },
+  'di.exp.4': { en: 'Digital Implant Assessment and Planning', zh: '數位植牙評估與規劃' },
 
   // Experience section
   'di.experience.title': {
     en: 'More Than 15 Years of Implant Experience and Continuing Education',
-    zh: '超過15年植牙經驗與持續專業進修',
+    zh: '豐富植牙經驗與國際專業進修',
   },
   'di.experience.p1': {
-    en: 'For patients with missing teeth, choosing a dentist with extensive clinical experience and a strong focus on comprehensive treatment planning is an important part of implant care.',
+    en: 'For patients experiencing tooth loss, choosing a dentist with extensive clinical experience and a strong commitment to comprehensive assessment and treatment planning is an important part of implant care.',
     zh: '對於缺牙患者而言，選擇一位具有豐富臨床經驗，並重視完整評估與治療規劃的牙醫，是植牙治療的重要一環。',
   },
   'di.experience.p2': {
-    en: 'Dr. Patrick Wu has remained actively involved in dental implant treatment and missing-tooth reconstruction for many years. While practising in the United States from 2009 to 2012, he pursued advanced implant education and clinical training involving implant surgery, osseointegration, bone augmentation and restorative treatment planning.',
-    zh: '吳沛恆醫師多年來持續投入人工植牙與缺牙重建。自2009年至2012年間於美國執業期間，吳醫師接受高階植牙教育與臨床訓練，深入學習植牙外科、骨整合原理、骨增量技術及修復治療規劃。',
+    en: 'Dr. Patrick Wu has dedicated a significant part of his professional career to dental implant treatment and missing-tooth reconstruction, which he considers one of the most technically demanding and rewarding areas of dentistry.',
+    zh: '吳沛恆醫師多年來持續投入人工植牙與缺牙重建，並將植牙視為牙科治療中極具挑戰性且深具成就感的領域之一。',
   },
   'di.experience.p3': {
-    en: 'After completing further education and clinical assessment, Dr. Wu earned Associate Fellow status with the American Academy of Implant Dentistry.',
-    zh: '經過持續進修與臨床考核，吳醫師取得美國植牙醫學會 American Academy of Implant Dentistry 頒發的 Associate Fellow 資格。',
+    en: 'While practising in the United States from 2009 to 2012, Dr. Wu pursued advanced education and clinical training in implant dentistry, including implant surgery, osseointegration, bone augmentation and full-mouth rehabilitation.',
+    zh: '自2009年至2012年間於美國執業期間，吳醫師持續接受進階植牙教育與臨床訓練，內容涵蓋植牙外科手術、骨整合原理、骨增量技術及全口重建治療。',
   },
   'di.experience.p4': {
-    en: 'Dr. Wu now has more than 15 years of clinical implant experience and has placed more than 2,200 dental implants. His experience includes single-tooth implants, multiple implants, full-arch rehabilitation and more complex multi-stage reconstruction cases.',
-    zh: '至今，吳醫師已累積超過15年植牙臨床經驗，完成超過2,200顆人工植體治療，經驗涵蓋單顆植牙、多顆植牙、全牙弓重建及較複雜的多階段缺牙重建案例。',
+    en: 'Through continuing education, clinical experience and assessment, Dr. Wu earned the Associate Fellow credential from the American Academy of Implant Dentistry.',
+    zh: '經過持續進修、臨床經驗累積及相關考核，吳醫師取得美國植牙醫學會 American Academy of Implant Dentistry 的 Associate Fellow 資格。',
+  },
+  'di.experience.p5': {
+    en: 'Dr. Wu now has more than 15 years of clinical implant experience and has placed more than 2,200 dental implants. His experience includes single-tooth implants, multiple-tooth replacement, full-mouth reconstruction and implant cases involving limited bone volume or complex restorative requirements.',
+    zh: '至今，吳醫師已累積超過15年植牙臨床經驗，完成超過2,200顆人工植體治療。其臨床經驗涵蓋單顆植牙、多顆缺牙重建、全口重建及涉及骨量不足與複雜修復需求的植牙案例。',
   },
   'di.experience.note': {
-    en: 'AAID Associate Fellow status represents advanced education, clinical experience and assessment in implant dentistry. It should not be interpreted as recognition of a dental specialty.',
-    zh: 'AAID Associate Fellow 資格代表醫師完成植牙相關進修、臨床經驗及考核，但不應被解讀為牙科專科資格。',
+    en: 'AAID Associate Fellow status reflects implant-related education, clinical experience and assessment. It should not be interpreted as recognition of a dental specialty.',
+    zh: 'AAID Associate Fellow 資格反映醫師完成植牙相關進修、臨床經驗及考核，但不應被解讀為牙科專科資格。',
   },
+
+  // Implant systems and materials
+  'di.systems.title': {
+    en: 'Established Implant Systems and High-Quality Restorative Materials',
+    zh: '高品質植體系統與修復材料',
+  },
+  'di.systems.p1': {
+    en: 'Dental implants do more than fill a missing-tooth space. Implant treatment requires consideration of function, oral health and long-term maintenance.',
+    zh: '人工植牙不只是填補缺牙，也是一項需要考慮功能、口腔健康及長期維護的治療。',
+  },
+  'di.systems.p2': {
+    en: 'Selection of an implant system and restorative material may depend on:',
+    zh: '植體系統及修復材料的選擇，可能受到以下因素影響：',
+  },
+  'di.systems.b1': { en: 'Bone quality and volume', zh: '骨質與骨量' },
+  'di.systems.b2': { en: 'Location of the missing tooth or teeth', zh: '缺牙位置' },
+  'di.systems.b3': { en: 'Bite relationship and function', zh: '咬合關係與功能' },
+  'di.systems.b4': { en: 'Esthetic expectations', zh: '美觀需求' },
+  'di.systems.b5': { en: 'Restorative design', zh: '修復設計' },
+  'di.systems.b6': { en: 'Budget considerations', zh: '預算考量' },
+  'di.systems.b7': { en: 'Access to components and long-term maintenance', zh: '原廠零件及長期維護需求' },
+  'di.systems.p3': {
+    en: 'Dr. Wu evaluates each patient\u2019s individual circumstances and develops a personalized implant treatment plan, including selection of an appropriate implant system and restorative design.',
+    zh: '吳醫師會根據患者的個別情況，制定個人化植牙治療方案，並選擇合適的植體系統及修復設計。',
+  },
+  'di.systems.p4': {
+    en: 'The treatment objective extends beyond implant placement and includes creating a natural-looking, functional, comfortable and maintainable missing-tooth replacement.',
+    zh: '治療目標不只是完成植體植入，也包括建立自然、實用、舒適並便於長期維護的缺牙重建方案。',
+  },
+
 
   // Principles
   'di.principles.title': { en: 'Dr. Wu\u2019s Implant Treatment Principles', zh: '吳醫師的植牙治療理念' },
