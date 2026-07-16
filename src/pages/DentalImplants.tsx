@@ -113,6 +113,8 @@ const DentalImplants = () => {
     setMeta('meta[property="og:title"]', 'property', 'og:title', t('di.meta.title'));
     setMeta('meta[property="og:description"]', 'property', 'og:description', t('di.meta.desc'));
     setMeta('meta[property="og:url"]', 'property', 'og:url', PUBLIC_URL);
+    setMeta('meta[property="og:type"]', 'property', 'og:type', 'website');
+    setMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -191,7 +193,7 @@ const DentalImplants = () => {
   const toggleFaq = (id: string, qKey: string) => {
     const willOpen = !openFaqs[id];
     setOpenFaqs((prev) => ({ ...prev, [id]: willOpen }));
-    if (willOpen) trackEvent('implant_faq_open', { question: qKey, language: lang });
+    if (willOpen) trackEvent('implant_faq_open', { question: qKey, language: lang, page: '/dental-implants' });
   };
 
   const scrollToId = (id: string) => {
@@ -207,9 +209,8 @@ const DentalImplants = () => {
   ];
 
   const principles = [1, 2, 3, 4, 5] as const;
-  const options = [1, 2, 3] as const;
-  const miBenefits = [1, 2, 3, 4, 5] as const;
-  const processSteps = [1, 2, 3, 4, 5, 6, 7] as const;
+  const miBenefits = [1, 2, 3, 4, 5, 6] as const;
+  const systemsBullets = [1, 2, 3, 4, 5, 6, 7] as const;
 
   const digitalItems = [
     { key: 'di.digital.item.1', Icon: Scan },
@@ -223,7 +224,7 @@ const DentalImplants = () => {
     <>
       <Header />
       <main className="pt-16 md:pt-20">
-        {/* HERO */}
+        {/* 1. HERO */}
         <section className="section-padding bg-background">
           <div className="section-container">
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -242,8 +243,8 @@ const DentalImplants = () => {
                   <button
                     type="button"
                     onClick={() => {
-                      trackEvent('implant_page_cta_click', { cta: 'primary_choose_clinic', language: lang });
-                      scrollToId('book-consultation');
+                      trackEvent('implant_book_click', { cta: 'hero_choose_clinic', language: lang, position: 'hero' });
+                      scrollToId('choose-clinic');
                     }}
                     className="btn-clinic min-h-11"
                   >
@@ -251,10 +252,7 @@ const DentalImplants = () => {
                   </button>
                   <button
                     type="button"
-                    onClick={() => {
-                      trackEvent('implant_page_cta_click', { cta: 'secondary_explore', language: lang });
-                      scrollToId('implant-overview');
-                    }}
+                    onClick={() => scrollToId('implant-overview')}
                     className="inline-flex items-center justify-center px-8 py-3 border border-border text-foreground font-medium tracking-wide rounded transition-colors hover:bg-secondary min-h-11"
                   >
                     {t('di.hero.ctaSecondary')}
@@ -277,7 +275,7 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* TRUST INDICATORS */}
+        {/* 2. EXPERIENCE HIGHLIGHTS */}
         <section className="bg-secondary py-12 md:py-16">
           <div className="section-container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -293,7 +291,7 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* EXPERIENCE */}
+        {/* 3. DR. WU EXPERIENCE */}
         <section id="implant-overview" className="section-padding bg-background">
           <div className="section-container">
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -306,6 +304,7 @@ const DentalImplants = () => {
                 <p>{t('di.experience.p2')}</p>
                 <p>{t('di.experience.p3')}</p>
                 <p>{t('di.experience.p4')}</p>
+                <p>{t('di.experience.p5')}</p>
                 <p className="text-xs text-muted-foreground/80 border-l-2 border-accent pl-4 italic">
                   {t('di.experience.note')}
                 </p>
@@ -314,62 +313,7 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* PRINCIPLES */}
-        <section className="section-padding bg-secondary">
-          <div className="section-container">
-            <div className="text-center mb-14 space-y-4">
-              <h2 className="heading-section">{t('di.principles.title')}</h2>
-              <div className="divider-accent" />
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {principles.map((n) => (
-                <div
-                  key={n}
-                  className="bg-background rounded-lg border border-border/50 p-6 flex flex-col"
-                >
-                  <div className="text-accent text-sm font-semibold mb-2">0{n}</div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">
-                    {t(`di.principles.${n}.title`)}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-[1.7]">
-                    {t(`di.principles.${n}.desc`)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* OPTIONS */}
-        <section className="section-padding bg-background">
-          <div className="section-container">
-            <div className="text-center mb-14 space-y-4">
-              <h2 className="heading-section">{t('di.options.title')}</h2>
-              <div className="divider-accent" />
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {options.map((n) => (
-                <article
-                  key={n}
-                  className="bg-secondary/50 rounded-lg border border-border/50 p-8 flex flex-col"
-                >
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {t(`di.options.${n}.title`)}
-                  </h3>
-                  <div className="w-10 h-px bg-accent mb-4" />
-                  <p className="text-base text-muted-foreground leading-[1.7]">
-                    {t(`di.options.${n}.desc`)}
-                  </p>
-                </article>
-              ))}
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
-              {t('di.options.note')}
-            </p>
-          </div>
-        </section>
-
-        {/* DIGITAL */}
+        {/* 4. DIGITAL TECHNOLOGY */}
         <section className="section-padding bg-secondary">
           <div className="section-container">
             <div className="text-center mb-14 space-y-4">
@@ -397,7 +341,7 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* MINIMALLY INVASIVE */}
+        {/* 5. MINIMALLY INVASIVE */}
         <section className="section-padding bg-background">
           <div className="section-container">
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -425,33 +369,60 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* PROCESS */}
+        {/* 6. IMPLANT SYSTEMS AND MATERIALS */}
         <section className="section-padding bg-secondary">
           <div className="section-container">
-            <div className="text-center mb-14 space-y-4">
-              <h2 className="heading-section">{t('di.process.title')}</h2>
-              <div className="divider-accent" />
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+              <div>
+                <h2 className="heading-section mb-4">{t('di.systems.title')}</h2>
+                <div className="w-12 h-0.5 bg-accent" />
+              </div>
+              <div className="space-y-5 text-base md:text-[17px] text-muted-foreground leading-[1.7]">
+                <p>{t('di.systems.p1')}</p>
+                <p>{t('di.systems.p2')}</p>
+                <ul className="space-y-2 pt-2 text-sm text-foreground">
+                  {systemsBullets.map((n) => (
+                    <li key={n} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0" />
+                      <span>{t(`di.systems.b${n}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p>{t('di.systems.p3')}</p>
+                <p>{t('di.systems.p4')}</p>
+              </div>
             </div>
-            <ol className="grid md:grid-cols-7 gap-4 md:gap-2 relative">
-              {processSteps.map((n) => (
-                <li key={n} className="flex md:flex-col items-start md:items-center gap-3 md:text-center">
-                  <div className="w-9 h-9 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-semibold shrink-0">
-                    {n}
-                  </div>
-                  <p className="text-sm text-foreground leading-snug md:mt-2">
-                    {t(`di.process.s${n}`)}
-                  </p>
-                </li>
-              ))}
-            </ol>
-            <p className="text-sm text-muted-foreground leading-[1.7] mt-10 max-w-3xl mx-auto text-center">
-              {t('di.process.note')}
-            </p>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="implant-faq" className="section-padding bg-background">
+        {/* 7. FIVE PRINCIPLES */}
+        <section className="section-padding bg-background">
+          <div className="section-container">
+            <div className="text-center mb-14 space-y-4">
+              <h2 className="heading-section">{t('di.principles.title')}</h2>
+              <div className="divider-accent" />
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {principles.map((n) => (
+                <div
+                  key={n}
+                  className="bg-secondary/50 rounded-lg border border-border/50 p-6 flex flex-col"
+                >
+                  <div className="text-accent text-sm font-semibold mb-2">0{n}</div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    {t(`di.principles.${n}.title`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-[1.7]">
+                    {t(`di.principles.${n}.desc`)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 8. FAQ */}
+        <section id="implant-faq" className="section-padding bg-secondary">
           <div className="section-container max-w-4xl">
             <div className="text-center mb-14 space-y-4">
               <h2 className="heading-section">{t('di.faq.title')}</h2>
@@ -463,7 +434,7 @@ const DentalImplants = () => {
                   <h3 className="text-sm uppercase tracking-[0.15em] text-accent font-semibold mb-4">
                     {t(cat.titleKey)}
                   </h3>
-                  <div className="divide-y divide-border border-y border-border">
+                  <div className="divide-y divide-border border-y border-border bg-background">
                     {cat.items.map((item, ii) => {
                       const id = `faq-${ci}-${ii}`;
                       const open = !!openFaqs[id];
@@ -475,7 +446,7 @@ const DentalImplants = () => {
                               onClick={() => toggleFaq(id, item.qKey)}
                               aria-expanded={open}
                               aria-controls={`${id}-panel`}
-                              className="w-full flex items-center justify-between gap-4 py-5 text-left min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                              className="w-full flex items-center justify-between gap-4 py-5 px-4 md:px-6 text-left min-h-11 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                             >
                               <span className="text-base md:text-lg font-medium text-foreground">
                                 {t(item.qKey)}
@@ -490,7 +461,7 @@ const DentalImplants = () => {
                             id={`${id}-panel`}
                             role="region"
                             hidden={!open}
-                            className="pb-6 space-y-3 text-base text-muted-foreground leading-[1.7]"
+                            className="pb-6 px-4 md:px-6 space-y-3 text-base text-muted-foreground leading-[1.7]"
                           >
                             {item.aKeys.map((k) => (
                               <p key={k}>{t(k)}</p>
@@ -511,8 +482,8 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* CLINIC BOOKING */}
-        <section id="book-consultation" className="section-padding bg-secondary">
+        {/* 9. CHOOSE A CLINIC */}
+        <section id="choose-clinic" className="section-padding bg-background">
           <div className="section-container">
             <div className="text-center mb-14 space-y-4 max-w-3xl mx-auto">
               <h2 className="heading-section">{t('di.clinic.title')}</h2>
@@ -524,7 +495,7 @@ const DentalImplants = () => {
 
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
               {/* LM */}
-              <article className="bg-background rounded-lg border border-border/50 p-8 flex flex-col">
+              <article className="bg-secondary/50 rounded-lg border border-border/50 p-8 flex flex-col">
                 <img src={lmLogo} alt={LM.name} className="h-10 self-start mb-4" />
                 <p className="text-xs uppercase tracking-[0.2em] text-accent font-medium mb-2">
                   {t('di.clinic.lm.city')}
@@ -549,6 +520,7 @@ const DentalImplants = () => {
                       trackEvent('implant_little_mountain_book_click', {
                         clinic: 'little_mountain',
                         language: lang,
+                        page: '/dental-implants',
                       })
                     }
                     className="btn-clinic min-h-11"
@@ -558,7 +530,7 @@ const DentalImplants = () => {
                   <a
                     href={LM.telHref}
                     onClick={() =>
-                      trackEvent('implant_little_mountain_call_click', {
+                      trackEvent('implant_call_click', {
                         clinic: 'little_mountain',
                         language: lang,
                       })
@@ -588,7 +560,7 @@ const DentalImplants = () => {
               </article>
 
               {/* FD */}
-              <article className="bg-background rounded-lg border border-border/50 p-8 flex flex-col">
+              <article className="bg-secondary/50 rounded-lg border border-border/50 p-8 flex flex-col">
                 <img src={friendlyLogo} alt={FD.name} className="h-10 self-start mb-4" />
                 <p className="text-xs uppercase tracking-[0.2em] text-accent font-medium mb-2">
                   {t('di.clinic.fd.city')}
@@ -613,6 +585,7 @@ const DentalImplants = () => {
                       trackEvent('implant_friendly_book_click', {
                         clinic: 'friendly',
                         language: lang,
+                        page: '/dental-implants',
                       })
                     }
                     className="btn-clinic min-h-11"
@@ -622,7 +595,7 @@ const DentalImplants = () => {
                   <a
                     href={FD.telHref}
                     onClick={() =>
-                      trackEvent('implant_friendly_call_click', {
+                      trackEvent('implant_call_click', {
                         clinic: 'friendly',
                         language: lang,
                       })
@@ -654,8 +627,8 @@ const DentalImplants = () => {
           </div>
         </section>
 
-        {/* NOTICE */}
-        <section className="py-12 bg-background">
+        {/* 10. MEDICAL NOTICE */}
+        <section className="py-12 bg-secondary">
           <div className="section-container max-w-3xl">
             <p className="text-xs md:text-sm text-muted-foreground leading-[1.7] border-l-2 border-accent/60 pl-4 italic">
               {t('di.notice')}
@@ -664,25 +637,21 @@ const DentalImplants = () => {
         </section>
       </main>
 
-      {/* Mobile sticky */}
+      {/* Mobile sticky CTA — Dr. Patrick Wu website: Choose a Clinic only */}
       <div
         className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-t border-border"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        <div className="flex gap-2 p-3">
+        <div className="p-3">
           <button
             type="button"
-            onClick={() => scrollToId('book-consultation')}
-            className="btn-clinic flex-1 min-h-11 text-sm px-3"
+            onClick={() => {
+              trackEvent('implant_book_click', { cta: 'sticky_choose_clinic', language: lang, position: 'sticky' });
+              scrollToId('choose-clinic');
+            }}
+            className="btn-clinic w-full min-h-11 text-sm"
           >
             {t('di.sticky.choose')}
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToId('implant-faq')}
-            className="flex-1 inline-flex items-center justify-center px-3 py-2 border border-border text-foreground font-medium rounded transition-colors hover:bg-secondary min-h-11 text-sm"
-          >
-            {t('di.sticky.faq')}
           </button>
         </div>
       </div>
