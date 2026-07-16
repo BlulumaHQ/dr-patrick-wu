@@ -193,7 +193,8 @@ export const implantTranslations: Record<string, { en: string; zh: string }> = {
   'di.mi.b2': { en: 'Reduced tissue disturbance', zh: '減少不必要的組織創傷' },
   'di.mi.b3': { en: 'Potentially less swelling', zh: '可能減少術後腫脹' },
   'di.mi.b4': { en: 'Potentially less postoperative discomfort', zh: '可能降低術後不適' },
-  'di.mi.b5': { en: 'A more comfortable recovery in suitable cases', zh: '適合病例可能有較舒適的恢復過程' },
+  'di.mi.b5': { en: 'Potentially less bleeding', zh: '可能減少出血' },
+  'di.mi.b6': { en: 'A more comfortable recovery in suitable cases', zh: '適合病例可能有較舒適的恢復過程' },
 
   // Process
   'di.process.title': { en: 'The Dental Implant Treatment Process', zh: '人工植牙治療流程' },
