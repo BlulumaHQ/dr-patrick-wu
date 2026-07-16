@@ -457,7 +457,7 @@ export const implantTranslations: Record<string, { en: string; zh: string }> = {
 
   // Notice
   'di.notice': {
-    en: 'This page provides general dental information and is not a diagnosis or a substitute for an individual clinical examination. Treatment recommendations, risks, healing time, fees and outcomes vary according to each patient\u2019s condition and the treatment provided at the selected clinic.',
-    zh: '本頁內容僅提供一般牙科資訊，不能取代個別診斷與臨床檢查。治療建議、風險、恢復時間、費用及結果，會因每位患者的情況及所選診所提供的治療而不同。',
+    en: 'This page provides general dental information and is not a diagnosis or a substitute for an individual clinical examination. Treatment recommendations, risks, healing time, fees and outcomes vary according to each patient\u2019s condition. Services, equipment and appointment availability may vary between clinic locations.',
+    zh: '本頁內容僅提供一般牙科資訊，不能取代個別診斷與臨床檢查。治療建議、風險、恢復時間、費用及結果會因每位患者的情況而不同。各診所提供的服務、設備及預約時段可能有所不同。',
   },
 };
