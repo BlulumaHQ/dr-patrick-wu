@@ -30,7 +30,7 @@ const translations: Record<string, Record<Language, string>> = {
   'about.degree': { en: 'D.M.D.', zh: 'D.M.D.' },
   'about.cred1': { en: 'University of Pennsylvania, School of Dental Medicine, 2009', zh: '賓夕法尼亞大學牙醫學院，2009年' },
   'about.cred2': { en: 'Clinical Assistant Professor, University of British Columbia', zh: '英屬哥倫比亞大學臨床助理教授' },
-  'about.cred3': { en: 'Associate Fellow, American Association of Implant Dentistry', zh: '美國植牙學會副研究員' },
+  'about.cred3': { en: 'Associate Fellow, American Academy of Implant Dentistry', zh: '美國植牙醫學會 Associate Fellow' },
   'about.bio': {
     en: 'Dr. Patrick Wu graduated with honours from the University of Pennsylvania School of Dental Medicine. After practicing in New Jersey, he returned to Vancouver in 2012 and has since been dedicated to providing comprehensive, patient-centered dental care.',
     zh: '吳柏翰醫師以優異成績畢業於賓夕法尼亞大學牙醫學院。在新澤西州執業後，他於2012年回到溫哥華，從此致力於提供全面、以患者為中心的牙科照護。'
